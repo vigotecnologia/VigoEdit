@@ -970,6 +970,14 @@ namespace VigoEdit
                             return (ValidaValor(Texto));
 
                         case "E-mail":
+
+                            // Verifica se existe pelo menos 1 ocorrência do "@"
+
+                            if (!Texto.Contains("@"))
+                                return false;
+
+                            // Aplica o REGEX (que não trata da existência do "@"
+
                             return REGEX_MAIL.IsMatch(Texto);
 
                         case "IP":
